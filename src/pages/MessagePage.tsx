@@ -84,7 +84,7 @@ const MessagePage = () => {
                 With all my love,
               </p>
               <p className="mt-1 font-script text-3xl text-foreground">
-                Your Sibling 💕
+                Your Brother,Ram💕
               </p>
             </motion.div>
           </motion.div>
