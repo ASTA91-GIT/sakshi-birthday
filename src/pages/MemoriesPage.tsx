@@ -1,50 +1,57 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowLeft, ArrowRight, Camera } from 'lucide-react';
+import { X, Camera } from 'lucide-react';
 import BirthdayButton from '@/components/BirthdayButton';
 import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 
+// Import actual photos
+import memory1 from '@/assets/memory-1.jpeg';
+import memory2 from '@/assets/memory-2.jpeg';
+import memory3 from '@/assets/memory-3.jpeg';
+import memory4 from '@/assets/memory-4.jpeg';
+import memory5 from '@/assets/memory-5.jpeg';
+import memory6 from '@/assets/memory-6.jpeg';
+
 const MemoriesPage = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Placeholder memories - replace with actual photos
   const memories = [
     {
       id: 1,
-      caption: 'Our first adventure together 🌟',
-      year: '2020',
-      placeholder: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop',
+      caption: 'Sibling vibes 🌸',
+      year: '2025',
+      image: memory1,
     },
     {
       id: 2,
-      caption: 'Birthday celebrations 🎂',
-      year: '2021',
-      placeholder: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=300&fit=crop',
+      caption: 'Fest fever together 🎉',
+      year: '2025',
+      image: memory2,
     },
     {
       id: 3,
-      caption: 'Summer memories ☀️',
-      year: '2022',
-      placeholder: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=400&h=300&fit=crop',
+      caption: 'My stylish sister 😎',
+      year: '2025',
+      image: memory3,
     },
     {
       id: 4,
-      caption: 'Sisters forever 💕',
-      year: '2023',
-      placeholder: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=400&h=300&fit=crop',
+      caption: 'Best friends forever 💕',
+      year: '2025',
+      image: memory4,
     },
     {
       id: 5,
-      caption: 'Making more memories 📸',
-      year: '2024',
-      placeholder: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=300&fit=crop',
+      caption: 'College memories 📚',
+      year: '2025',
+      image: memory5,
     },
     {
       id: 6,
-      caption: 'Together through it all 🤍',
+      caption: 'Sisters at heart 🤍',
       year: '2025',
-      placeholder: 'https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?w=400&h=300&fit=crop',
+      image: memory6,
     },
   ];
 
@@ -99,7 +106,7 @@ const MemoriesPage = () => {
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={memory.placeholder}
+                    src={memory.image}
                     alt={memory.caption}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -136,7 +143,7 @@ const MemoriesPage = () => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <img
-                    src={memories[selectedImage].placeholder}
+                    src={memories[selectedImage].image}
                     alt={memories[selectedImage].caption}
                     className="max-h-[70vh] w-full object-contain"
                   />
